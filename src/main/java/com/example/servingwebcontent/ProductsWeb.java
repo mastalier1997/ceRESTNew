@@ -34,8 +34,9 @@ public class ProductsWeb {
             } in .close();
 
             String lenker =response.toString();
-
-            System.out.println(lenker);
+            String s= lenker.replaceAll("[\\[\\](){}\"]","");
+            List<String> list = Arrays.asList(s.split(","));
+            list.forEach(x->System.out.println(x));
 
         } else {
             System.out.println("GET NOT WORKED");
