@@ -16,7 +16,7 @@ public class GreetingController {
 	@GetMapping("/greeting")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
-		return "greeting";
+		return "handlebar";
 	}
 
     @GetMapping("/handlebar")
@@ -31,7 +31,7 @@ public class GreetingController {
         Collection<Map.Entry<String, MultiValuedMap<String, String>>> entries1 = products.fahrradlenker.entries();
 
         model.addAttribute("test", entries1);
-        return "greeting";
+        return "handlebar";
     }
 
 
