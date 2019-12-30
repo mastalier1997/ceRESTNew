@@ -5,6 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p th:text="'Hello, ' + ${test} + '!'" />
+    <!--<p th:text="'Hello, ' + ${test} + '!'" />-->
+    <select class="form-control" id="testOrder" name="testOrder">
+        <option value="">Select Type</option>
+        <option th:each="test : ${type}"
+                th:value="${test}"
+                th:text="${test}"></option>
+    </select>
 </body>
 </html>

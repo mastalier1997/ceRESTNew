@@ -1,6 +1,5 @@
 package com.example.servingwebcontent;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.BufferedReader;
@@ -15,7 +14,7 @@ import java.util.List;
 public class ProductsWeb {
 
     @SuppressWarnings("Duplicates")
-    public static void lenkertyp() throws IOException {
+    public List<String> lenkertyp() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
 
@@ -35,15 +34,15 @@ public class ProductsWeb {
 
             String lenker =response.toString();
             String s= lenker.replaceAll("[\\[\\](){}\"]","");
-            List<String> list = Arrays.asList(s.split(","));
-            list.forEach(x->System.out.println(x));
+            typs = Arrays.asList(s.split(","));
+            typs.forEach(x->System.out.println(x));
+
 
         } else {
             System.out.println("GET NOT WORKED");
         }
+        return typs;
     }
 
-    public static void main(String[] args) throws IOException {
-        lenkertyp();
-    }
+
 }

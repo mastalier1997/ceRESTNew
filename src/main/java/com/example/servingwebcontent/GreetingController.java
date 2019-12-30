@@ -6,8 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -21,18 +24,13 @@ public class GreetingController {
 
     @GetMapping("/handlebar")
     public String handlebar(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
-	    Products products = new Products();
-        products.schaltung("Rennradlenker");
-        products.material("Rennradlenker");
-        products.griff("Carbon", "Rennradlenker");
-        products.griff("Aluminium", "Rennradlenker");
-        //tt
-        products.lenkertyp();
-        Collection<Map.Entry<String, MultiValuedMap<String, String>>> entries1 = products.fahrradlenker.entries();
-
-        model.addAttribute("test", entries1);
+	    ProductsWeb productsWeb = new ProductsWeb();
+        List<String> list = new ArrayList<String>();
+        list=productsWeb.lenkertyp();
+        model.addAttribute("type", list);
         return "handlebar";
     }
+
 
 
 
