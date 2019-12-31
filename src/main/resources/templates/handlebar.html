@@ -6,15 +6,17 @@
 </head>
 <body>
     <!--<p th:text="'Hello, ' + ${test} + '!'" />-->
-    <select class="form-control" id="testOrder" name="testOrder">
-        <option value="">Select Type</option>
-        <option th:each="test : ${type}"
-                th:value="${test}"
-                th:text="${test}">
-        </option>
-    </select>
-    <br>
-    <input type="submit" value="Auswählen"/>
+    <form action="schaltung" method="post">
+        <select class="form-control" id="testOrder" name="testOrder">
+            <option value="">Select Type</option>
+            <option th:each="test : ${type}"
+                    th:value="${test}"
+                    th:text="${test}">
+            </option>
+        </select>
+        <br>
+        <input type="submit" value="Auswählen"/>
+    </form>
     <a href="index.html">Zur Startseite</a>
 </body>
 </html>
