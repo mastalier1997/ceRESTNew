@@ -5,15 +5,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-        <select class="form-control" id="testOrder" name="testOrder">
+    <form>
+        <select class="form-control" id="handlebar" name="testOrder">
             <option value="">Select Type</option>
             <option th:each="test : ${type}"
                     th:value="${test}"
                     th:text="${test}">
             </option>
         </select>
+
+    </form>
         <a href="/schaltung">
-            <button>Select Gearshift</button>
+            <button>Next step</button>
         </a>
 
     <a href="index.html">Zur Startseite</a>

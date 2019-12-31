@@ -6,15 +6,15 @@
     <title>Griff</title>
 </head>
 <body>
-<select class="form-control" id="testOrder" name="testOrder">
+<select class="form-control" id="griff" name="testOrder">
     <option value="">Select Gearshift</option>
     <option th:each="test : ${type}"
             th:value="${test}"
             th:text="${test}">
     </option>
 </select>
-<a href="../static/index.html">
-    <button>Select Index</button>
+<a href="index.html">
+    <button>Finish order</button>
 </a>
 </body>
 </html>

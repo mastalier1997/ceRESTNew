@@ -6,7 +6,7 @@
     <title>Schaltung</title>
 </head>
 <body>
-    <select class="form-control" id="testOrder" name="testOrder">
+    <select class="form-control" id="schaltung" name="testOrder">
         <option value="">Select Gearshift</option>
         <option th:each="test : ${type}"
                 th:value="${test}"
@@ -14,7 +14,7 @@
         </option>
     </select>
     <a href="/material">
-        <button>Select Material</button>
+        <button>Next step</button>
     </a>
 <a href="index.html">Zur Startseite</a>
 </body>
