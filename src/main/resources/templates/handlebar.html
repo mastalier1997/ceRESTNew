@@ -10,10 +10,11 @@
         <option value="">Select Type</option>
         <option th:each="test : ${type}"
                 th:value="${test}"
-                th:text="${test}"></option>
-        <input type="submit"/>
-
+                th:text="${test}">
+        </option>
     </select>
+    <br>
+    <input type="submit" value="Auswählen"/>
     <a href="index.html">Zur Startseite</a>
 </body>
 </html>
