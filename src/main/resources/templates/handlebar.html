@@ -5,8 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <!--<p th:text="'Hello, ' + ${test} + '!'" />-->
-    <form action="schaltung" method="post">
         <select class="form-control" id="testOrder" name="testOrder">
             <option value="">Select Type</option>
             <option th:each="test : ${type}"
@@ -14,9 +12,10 @@
                     th:text="${test}">
             </option>
         </select>
-        <br>
-        <input type="submit" value="Auswählen"/>
-    </form>
+        <a href="/schaltung">
+            <button>Select Gearshift</button>
+        </a>
+
     <a href="index.html">Zur Startseite</a>
 </body>
 </html>

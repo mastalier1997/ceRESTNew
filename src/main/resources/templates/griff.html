@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Griff</title>
 </head>
 <body>
-
+<select class="form-control" id="testOrder" name="testOrder">
+    <option value="">Select Gearshift</option>
+    <option th:each="test : ${type}"
+            th:value="${test}"
+            th:text="${test}">
+    </option>
+</select>
+<a href="../static/index.html">
+    <button>Select Index</button>
+</a>
 </body>
 </html>

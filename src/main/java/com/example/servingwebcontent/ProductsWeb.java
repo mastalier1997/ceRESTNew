@@ -1,5 +1,6 @@
 package com.example.servingwebcontent;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.BufferedReader;
@@ -42,6 +43,87 @@ public class ProductsWeb {
             System.out.println("GET NOT WORKED");
         }
         return typs;
+    }
+
+    @SuppressWarnings("Duplicates")
+    public List<String> schaltung(String s) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+
+        URL urlForGetRequest = new URL("https://www.maripavi.at/produkt/schaltung?lenkertyp=flatbarlenker"/*+s*/);
+        String readLine = null;
+        HttpURLConnection connection = (HttpURLConnection) urlForGetRequest.openConnection();
+        connection.setRequestMethod("GET");
+        int responseCode = connection.getResponseCode();
+        List<String> schaltung= new ArrayList();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(connection.getInputStream()));
+            StringBuffer response = new StringBuffer();
+            while ((readLine = in .readLine()) != null) {
+                response.append(readLine);
+            } in .close();
+
+            String lenker =response.toString();
+            String s1= lenker.replaceAll("[\\[\\](){}\"]","");
+            schaltung = Arrays.asList(s1.split(","));
+            schaltung.forEach(x->System.out.println(x));
+        }
+        return schaltung;
+
+    }
+
+    @SuppressWarnings("Duplicates")
+    public List<String> material(String s) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+
+        URL urlForGetRequest = new URL("https://www.maripavi.at/produkt/material?lenkertyp=flatbarlenker"/*+s*/);
+        String readLine = null;
+        HttpURLConnection connection = (HttpURLConnection) urlForGetRequest.openConnection();
+        connection.setRequestMethod("GET");
+        int responseCode = connection.getResponseCode();
+        List<String> schaltung= new ArrayList();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(connection.getInputStream()));
+            StringBuffer response = new StringBuffer();
+            while ((readLine = in .readLine()) != null) {
+                response.append(readLine);
+            } in .close();
+
+            String lenker =response.toString();
+            String s1= lenker.replaceAll("[\\[\\](){}\"]","");
+            schaltung = Arrays.asList(s1.split(","));
+            schaltung.forEach(x->System.out.println(x));
+        }
+        return schaltung;
+
+    }
+
+    @SuppressWarnings("Duplicates")
+    public List<String> griff(String s) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+
+        URL urlForGetRequest = new URL("https://www.maripavi.at/produkt/griff?material=carbon"/*+s*/);
+        String readLine = null;
+        HttpURLConnection connection = (HttpURLConnection) urlForGetRequest.openConnection();
+        connection.setRequestMethod("GET");
+        int responseCode = connection.getResponseCode();
+        List<String> schaltung= new ArrayList();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(connection.getInputStream()));
+            StringBuffer response = new StringBuffer();
+            while ((readLine = in .readLine()) != null) {
+                response.append(readLine);
+            } in .close();
+
+            String lenker =response.toString();
+            String s1= lenker.replaceAll("[\\[\\](){}\"]","");
+            schaltung = Arrays.asList(s1.split(","));
+            schaltung.forEach(x->System.out.println(x));
+        }
+        return schaltung;
+
     }
 
 

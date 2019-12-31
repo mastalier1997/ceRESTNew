@@ -31,6 +31,35 @@ public class GreetingController {
         return "handlebar";
     }
 
+    @GetMapping("/schaltung")
+    public String schaltung(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
+        ProductsWeb productsWeb = new ProductsWeb();
+        List<String> list = new ArrayList<String>();
+        list=productsWeb.schaltung("");
+        model.addAttribute("type", list);
+        return "schaltung";
+    }
+
+    @GetMapping("/griff")
+    public String griff(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
+        ProductsWeb productsWeb = new ProductsWeb();
+        List<String> list = new ArrayList<String>();
+        list=productsWeb.griff("");
+        model.addAttribute("type", list);
+        return "griff";
+    }
+
+    @GetMapping("/material")
+    public String material(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
+        ProductsWeb productsWeb = new ProductsWeb();
+        List<String> list = new ArrayList<String>();
+        list=productsWeb.material("");
+        model.addAttribute("type", list);
+        return "material";
+    }
+
+
+
 
 
 
