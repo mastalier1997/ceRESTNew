@@ -74,6 +74,17 @@ public class WebController {
 
     }*/
 
+    @GetMapping("/createUser")
+    public String createUser(Model model) {
+        model.addAttribute("user", new User());
+        return "createUser";
+    }
+
+    @PostMapping("/createUser")
+    public String createUser(@ModelAttribute User user){
+        return "userDone";
+    }
+
 
 
 

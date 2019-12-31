@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Done</title>
+</head>
+<body>
+    <h1>Result</h1>
+    <!--<p th:text="'First Name: ' + ${user.vorname}" />
+    <p th:text="'Lastname: ' + ${com.example.servingwebcontent.User.nachname}" />-->
+    <p>Success User created</p>
+    <p th:text="${user.vorname}"></p>
+    <p th:text="${user.nachname}"></p>
+    <a href="/createUser">Create another User</a>
+</body>
+</html>

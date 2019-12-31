@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <form>
+    <form action="#" th:action="@{/schaltung}" th:object="${String}" method="post">
         <select class="form-control" id="handlebar" name="testOrder">
             <option value="">Select Type</option>
             <option th:each="test : ${type}"
@@ -13,11 +13,11 @@
                     th:text="${test}">
             </option>
         </select>
-
-    </form>
         <a href="/schaltung">
-            <button>Next step</button>
-        </a>
+             <button>Next step</button>
+         </a>
+    </form>
+
 
     <a href="index.html">Zur Startseite</a>
 </body>
