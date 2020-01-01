@@ -8,7 +8,7 @@
 <body>
 <select class="form-control" id="material" name="testOrder">
     <option value="">Select Material</option>
-    <option th:each="test : ${type}"
+    <option th:each="test : ${material}"
             th:value="${test}"
             th:text="${test}">
     </option>

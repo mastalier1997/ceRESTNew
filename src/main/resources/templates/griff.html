@@ -8,7 +8,7 @@
 <body>
 <select class="form-control" id="griff" name="testOrder">
     <option value="">Select Gearshift</option>
-    <option th:each="test : ${type}"
+    <option th:each="test : ${handle}"
             th:value="${test}"
             th:text="${test}">
     </option>

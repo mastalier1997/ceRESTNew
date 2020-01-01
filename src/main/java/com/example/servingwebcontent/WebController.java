@@ -28,15 +28,16 @@ public class WebController {
         List<String> list = new ArrayList<String>();
         list=productsWeb.lenkertyp();
         model.addAttribute("type", list);
+        //model.addAttribute("handlebar", new Handlebar());
         return "handlebar";
     }
 
-    @GetMapping("/schaltung")
+    @PostMapping("/schaltung")
     public String schaltung(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
         ProductsWeb productsWeb = new ProductsWeb();
         List<String> list = new ArrayList<String>();
         list=productsWeb.schaltung("");
-        model.addAttribute("type", list);
+        model.addAttribute("gear", list);
         return "schaltung";
     }
 
@@ -45,7 +46,7 @@ public class WebController {
         ProductsWeb productsWeb = new ProductsWeb();
         List<String> list = new ArrayList<String>();
         list=productsWeb.griff("");
-        model.addAttribute("type", list);
+        model.addAttribute("handle", list);
         return "griff";
     }
 
@@ -54,22 +55,15 @@ public class WebController {
         ProductsWeb productsWeb = new ProductsWeb();
         List<String> list = new ArrayList<String>();
         list=productsWeb.material("");
-        model.addAttribute("type", list);
+        model.addAttribute("material", list);
         return "material";
     }
 
     /*String s12 =null;
     @PostMapping("/handlebar")
-    public String addNewType(@ModelAttribute("type") @Valid @RequestBody String type, Model model) {
+    public String addNewType(@ModelAttribute("handlebar") Handlebar handlebar) {
 
-
-        model.addAttribute("type", type);
-
-        s12=type;
-        System.out.println(s12+"1213645");
-
-
-        return s12;
+       return "";
 
 
     }*/

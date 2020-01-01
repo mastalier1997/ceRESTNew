@@ -6,16 +6,15 @@
 </head>
 <body>
     <form action="#" th:action="@{/schaltung}" th:object="${String}" method="post">
-        <select class="form-control" id="handlebar" name="testOrder">
+        <select class="form-control" id="handlebar" name="testOrder" >
             <option value="">Select Type</option>
             <option th:each="test : ${type}"
                     th:value="${test}"
                     th:text="${test}">
             </option>
         </select>
-        <a href="/schaltung">
-             <button>Next step</button>
-         </a>
+        <button type="submit">Next step</button>
+        <!--<p><input type="submit" value="Submit" />-->
     </form>
 
 
