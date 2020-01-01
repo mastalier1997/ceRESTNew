@@ -32,42 +32,41 @@ public class WebController {
         return "handlebar";
     }
 
+    String s=null;
     @RequestMapping("/schaltung")
     public String schaltung(@RequestParam(name="name", required=false) String name, @RequestParam String testOrder, Model model) throws IOException {
         ProductsWeb productsWeb = new ProductsWeb();
         List<String> list = new ArrayList<String>();
-        list=productsWeb.schaltung("");
+        list=productsWeb.schaltung(testOrder);
         model.addAttribute("gear", list);
         model.addAttribute("testOrder", testOrder);
+        s=testOrder;
         return "schaltung";
     }
 
-    @GetMapping("/griff")
-    public String griff(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
+    String s1=null;
+    @RequestMapping("/griff")
+    public String griff(@RequestParam(name="name", required=false) String name, @RequestParam String testOrder,Model model) throws IOException {
         ProductsWeb productsWeb = new ProductsWeb();
         List<String> list = new ArrayList<String>();
-        list=productsWeb.griff("");
+        list=productsWeb.griff(testOrder);
         model.addAttribute("handle", list);
+        s1=testOrder;
         return "griff";
     }
 
-    @GetMapping("/material")
-    public String material(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
+    String s2=null;
+    @RequestMapping("/material")
+    public String material(@RequestParam(name="name", required=false) String name, @RequestParam String testOrder, Model model) throws IOException {
         ProductsWeb productsWeb = new ProductsWeb();
         List<String> list = new ArrayList<String>();
-        list=productsWeb.material("");
+        list=productsWeb.material(s);
         model.addAttribute("material", list);
+        s2=testOrder;
         return "material";
     }
 
-    /*String s12 =null;
-    @PostMapping("/handlebar")
-    public String addNewType(@ModelAttribute("handlebar") Handlebar handlebar) {
 
-       return "";
-
-
-    }*/
 
     @GetMapping("/createUser")
     public String createUser(Model model) {

@@ -6,17 +6,16 @@
     <title>Schaltung</title>
 </head>
 <body>
-
-    <select class="form-control" id="schaltung" name="testOrder">
-        <option value="">Select Gearshift</option>
-        <option th:each="test : ${gear}"
-                th:value="${test}"
-                th:text="${test}">
-        </option>
-    </select>
-    <a href="/material">
-        <button>Next step</button>
-    </a>
+    <form action="#" th:action="@{/material}" th:object="${String}" method="post">
+        <select class="form-control" id="schaltung" name="testOrder">
+            <option value="">Select Gearshift</option>
+            <option th:each="test : ${gear}"
+                    th:value="${test}"
+                    th:text="${test}">
+            </option>
+        </select>
+        <button type="submit">Next step</button>
+    </form>
 <a href="index.html">Zur Startseite</a>
 </body>
 </html>

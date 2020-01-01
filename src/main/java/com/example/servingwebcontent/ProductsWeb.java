@@ -49,7 +49,7 @@ public class ProductsWeb {
     public List<String> schaltung(String s) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
-        URL urlForGetRequest = new URL("https://www.maripavi.at/produkt/schaltung?lenkertyp=flatbarlenker"/*+s*/);
+        URL urlForGetRequest = new URL("https://www.maripavi.at/produkt/schaltung?lenkertyp="+s);
         String readLine = null;
         HttpURLConnection connection = (HttpURLConnection) urlForGetRequest.openConnection();
         connection.setRequestMethod("GET");
@@ -76,7 +76,7 @@ public class ProductsWeb {
     public List<String> material(String s) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
-        URL urlForGetRequest = new URL("https://www.maripavi.at/produkt/material?lenkertyp=flatbarlenker"/*+s*/);
+        URL urlForGetRequest = new URL("https://www.maripavi.at/produkt/material?lenkertyp="+s);
         String readLine = null;
         HttpURLConnection connection = (HttpURLConnection) urlForGetRequest.openConnection();
         connection.setRequestMethod("GET");
@@ -103,7 +103,7 @@ public class ProductsWeb {
     public List<String> griff(String s) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
-        URL urlForGetRequest = new URL("https://www.maripavi.at/produkt/griff?material=carbon"/*+s*/);
+        URL urlForGetRequest = new URL("https://www.maripavi.at/produkt/griff?material="+s);
         String readLine = null;
         HttpURLConnection connection = (HttpURLConnection) urlForGetRequest.openConnection();
         connection.setRequestMethod("GET");
