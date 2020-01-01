@@ -32,12 +32,13 @@ public class WebController {
         return "handlebar";
     }
 
-    @PostMapping("/schaltung")
-    public String schaltung(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
+    @RequestMapping("/schaltung")
+    public String schaltung(@RequestParam(name="name", required=false) String name, @RequestParam String testOrder, Model model) throws IOException {
         ProductsWeb productsWeb = new ProductsWeb();
         List<String> list = new ArrayList<String>();
         list=productsWeb.schaltung("");
         model.addAttribute("gear", list);
+        model.addAttribute("testOrder", testOrder);
         return "schaltung";
     }
 

@@ -24,9 +24,9 @@ public class Products {
 
 
     @SuppressWarnings("Duplicates")
-    public void lenkertyp() throws  IOException {
+    public String lenkertyp() throws  IOException {
         ObjectMapper mapper = new ObjectMapper();
-
+        String name = null;
 
         URL urlForGetRequest = new URL("https://www.maripavi.at/produkt/lenkertyp");
         String readLine = null;
@@ -48,6 +48,7 @@ public class Products {
                 String s = list.get(i);
                 if (s.contains("Flatbarlenker")){
                     fahrradlenker.put("Flatbarlenker", flatbarlenker);
+                    name = "Flattbarlenker";
                 }else if (s.contains("Bullhornlenker")){
                     fahrradlenker.put("Bullhornlenker", bullhornlenker);
                 }else{
@@ -58,6 +59,7 @@ public class Products {
         } else {
             System.out.println("GET NOT WORKED");
         }
+        return name;
     }
 
 
