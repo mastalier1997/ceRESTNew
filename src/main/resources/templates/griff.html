@@ -6,15 +6,16 @@
     <title>Griff</title>
 </head>
 <body>
-<select class="form-control" id="griff" name="testOrder">
-    <option value="">Select Gearshift</option>
-    <option th:each="test : ${handle}"
-            th:value="${test}"
-            th:text="${test}">
-    </option>
-</select>
-<a href="index.html">
-    <button>Finish order</button>
-</a>
+<form action="#" th:action="@{/overview}" th:object="${String}" method="post">
+    <select class="form-control" id="griff" name="testOrder">
+        <option value="">Select Gearshift</option>
+        <option th:each="test : ${handle}"
+                th:value="${test}"
+                th:text="${test}">
+        </option>
+    </select>
+    <button type="submit">Next step</button>
+</form>
+
 </body>
 </html>
