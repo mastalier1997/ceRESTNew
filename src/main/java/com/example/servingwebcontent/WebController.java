@@ -11,7 +11,8 @@ import java.util.List;
 
 @Controller
 public class WebController {
-    Overview overview;
+    Overview overview = new Overview();
+
 
     @GetMapping("/handlebar")
     public String handlebar(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
@@ -19,7 +20,7 @@ public class WebController {
         List<String> list = new ArrayList<String>();
         list=productsWeb.lenkertyp();
         model.addAttribute("type", list);
-        //overview.setHandlebar(type);
+        overview.setHandlebar(type);
         //model.addAttribute("handlebar", new Handlebar());
         return "handlebar";
     }
