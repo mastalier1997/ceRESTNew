@@ -11,12 +11,7 @@ import java.util.List;
 
 @Controller
 public class WebController {
-
-	@GetMapping("/greeting")
-	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-		model.addAttribute("name", name);
-		return "handlebar";
-	}
+    Overview overview;
 
     @GetMapping("/handlebar")
     public String handlebar(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
@@ -24,6 +19,7 @@ public class WebController {
         List<String> list = new ArrayList<String>();
         list=productsWeb.lenkertyp();
         model.addAttribute("type", list);
+        //overview.setHandlebar(type);
         //model.addAttribute("handlebar", new Handlebar());
         return "handlebar";
     }
@@ -36,6 +32,7 @@ public class WebController {
         list=productsWeb.schaltung(testOrder);
         model.addAttribute("gear", list);
         model.addAttribute("testOrder", testOrder);
+        overview.setGear(testOrder);
         type=testOrder;
         return "schaltung";
     }
@@ -47,6 +44,7 @@ public class WebController {
         List<String> list = new ArrayList<String>();
         list=productsWeb.griff(testOrder);
         model.addAttribute("handle", list);
+        overview.setGrip(testOrder);
         material=testOrder;
         return "griff";
     }
@@ -58,6 +56,7 @@ public class WebController {
         List<String> list = new ArrayList<String>();
         list=productsWeb.material(type);
         model.addAttribute("material", list);
+        overview.setMaterial(testOrder);
         gear=testOrder;
         return "material";
     }
@@ -68,8 +67,6 @@ public class WebController {
         handle=testOrder;
         return "overview";
     }
-
-
 
     @GetMapping("/createUser")
     public String createUser(Model model) {
