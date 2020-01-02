@@ -66,6 +66,7 @@ public class WebController {
     @RequestMapping("/overview")
     public String overview(@RequestParam(name="name", required=false) String name,@RequestParam String testOrder, Model model){
         handle=testOrder;
+        model.addAttribute("ov", testOrder);
         return "overview";
     }
 
