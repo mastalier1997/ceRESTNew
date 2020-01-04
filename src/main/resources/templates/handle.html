@@ -3,19 +3,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Schaltung</title>
+    <title>Griff</title>
 </head>
 <body>
-    <form action="#" th:action="@{/material}" th:object="${String}" method="post">
-        <select class="form-control" id="schaltung" name="testOrder">
+    <form action="#" th:action="@{/overview}" th:object="${String}" method="post">
+        <select class="form-control" id="griff" name="testOrder">
             <option value="">Select Gearshift</option>
-            <option th:each="test : ${gear}"
+            <option th:each="test : ${handle}"
                     th:value="${test}"
                     th:text="${test}">
             </option>
         </select>
-        <button type="submit">Next step</button>
+        <button type="submit">Done</button>
     </form>
-<a href="index.html">Zur Startseite</a>
+    <!--<a href="/material"><button>Back</button></a>-->
 </body>
 </html>

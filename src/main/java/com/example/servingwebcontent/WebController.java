@@ -26,7 +26,7 @@ public class WebController {
     }
 
     public String type=null;
-    @RequestMapping("/schaltung")
+    @RequestMapping("/gear")
     public String schaltung(@RequestParam(name="name", required=false) String name, @RequestParam String testOrder, Model model) throws IOException {
         ProductsWeb productsWeb = new ProductsWeb();
         List<String> list = new ArrayList<String>();
@@ -35,11 +35,11 @@ public class WebController {
         model.addAttribute("testOrder", testOrder);
         overview.setGear(testOrder);
         type=testOrder;
-        return "schaltung";
+        return "gear";
     }
 
     public String material=null;
-    @RequestMapping("/griff")
+    @RequestMapping("/handle")
     public String griff(@RequestParam(name="name", required=false) String name, @RequestParam String testOrder,Model model) throws IOException {
         ProductsWeb productsWeb = new ProductsWeb();
         List<String> list = new ArrayList<String>();
@@ -47,7 +47,7 @@ public class WebController {
         model.addAttribute("handle", list);
         overview.setGrip(testOrder);
         material=testOrder;
-        return "griff";
+        return "handle";
     }
 
     public String gear=null;
@@ -66,7 +66,10 @@ public class WebController {
     @RequestMapping("/overview")
     public String overview(@RequestParam(name="name", required=false) String name,@RequestParam String testOrder, Model model){
         handle=testOrder;
-        model.addAttribute("ov",handle);
+        model.addAttribute("ha",handle);
+        model.addAttribute("ge",gear);
+        model.addAttribute("ty",type);
+        model.addAttribute("ma",material);
         return "overview";
     }
 
