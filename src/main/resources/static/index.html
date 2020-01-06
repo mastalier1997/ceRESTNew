@@ -1,11 +1,24 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head> 
-    <title>Getting Started: Serving Web Content</title> 
+    <title>Configurator</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <p>Get your handlebar <a href="/handlebar">here</a></p>
-    <p>Create User <a href="/createUser">here</a></p>
+<header>
+        <div id="tagline" class="main">
+            <!--<p>Get your handlebar <a href="/handlebar">here</a></p>
+            <p>Create User <a href="/createUser">here</a></p>-->
+        </div>
+        <div class="title">
+            <h1>Configurator</h1>
+        </div>
+        <div class="button">
+            <a href="/handlebar" class="btn">Configure handlebar</a>
+            <a href="/createUser" class="btn">Create User</a>
+        </div>
+    </header>
+    <script src="../js/application.js"></script>
 </body>
 </html>

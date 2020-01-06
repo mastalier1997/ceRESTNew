@@ -14,6 +14,8 @@ public class WebController {
     Overview overview = new Overview();
 
 
+
+
     @GetMapping("/handlebar")
     public String handlebar(@RequestParam(name="name", required=false) String name, Model model) throws IOException {
 	    ProductsWeb productsWeb = new ProductsWeb();
