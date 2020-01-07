@@ -101,9 +101,10 @@ header{
     background: #2ecc71;
 }
 
-body{
-    background: #34495e;
+#createUser{
+    background: #F9CBFF;
 }
+
 
 select{
     -webkit-appearance: none;
@@ -151,4 +152,20 @@ select::-ms-expand{
 
 .select:hover:after{
     color: #2ecc71;
+}
+
+
+#selectBody{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #F9CBFF;
+}
+
+#userDone{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }

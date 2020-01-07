@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Griff</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" href="css/style.css">
 </head>
-<body>
+<body id="selectBody">
     <form action="#" th:action="@{/overview}" th:object="${String}" method="post">
-        <select class="form-control" id="griff" name="testOrder">
-            <option value="">Select Gearshift</option>
-            <option th:each="test : ${handle}"
-                    th:value="${test}"
-                    th:text="${test}">
-            </option>
-        </select>
+        <div class="select">
+            <select class="form-control" id="griff" name="testOrder">
+                <option value="">Select Gearshift</option>
+                <option th:each="test : ${handle}"
+                        th:value="${test}"
+                        th:text="${test}">
+                </option>
+            </select>
+        </div>
         <button type="submit">Done</button>
     </form>
     <!--<a href="/material"><button>Back</button></a>-->
