@@ -7,7 +7,9 @@
     <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" href="css/style.css">
 </head>
 <body id="selectBody">
-    <form action="#" th:action="@{/overview}" th:object="${String}" method="post">
+<div class="box-back">
+
+    <form class="box" action="#" th:action="@{/overview}" th:object="${String}" method="post">
         <div class="select">
             <select class="form-control" id="griff" name="testOrder">
                 <option selected disabled>Select Gearshift</option>
@@ -17,8 +19,9 @@
                 </option>
             </select>
         </div>
-        <button type="submit">Done</button>
+        <a href="/overview" style="text-decoration: none"><button class="buttonUser">Done</button></a>
     </form>
+</div>
     <!--<a href="/material"><button>Back</button></a>-->
 </body>
 </html>
