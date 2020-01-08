@@ -203,6 +203,7 @@ select::-ms-expand{
     top: 40%;
     left: 50%;
     margin-bottom: 15%;
+    color: white;
 }
 
 .ow-p{
