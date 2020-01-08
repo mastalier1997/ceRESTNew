@@ -210,3 +210,41 @@ select::-ms-expand{
     color: white;
     margin-bottom: 10%;
 }
+
+.buttonUser{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.buttonUser:hover{
+    background: #2ecc71;
+}
+
+.buttonHome{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #cc3d2e;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.buttonHome:hover{
+    background: #cc3d2e;
+}
