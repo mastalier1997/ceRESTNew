@@ -10,7 +10,7 @@
     <form action="#" th:action="@{/overview}" th:object="${String}" method="post">
         <div class="select">
             <select class="form-control" id="griff" name="testOrder">
-                <option value="">Select Gearshift</option>
+                <option selected disabled>Select Gearshift</option>
                 <option th:each="test : ${handle}"
                         th:value="${test}"
                         th:text="${test}">
