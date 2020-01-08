@@ -199,16 +199,21 @@ select::-ms-expand{
 
 }
 
-.ow_h1{
+.ow-h1{
     top: 40%;
     left: 50%;
-    margin-bottom: 15%;
+    margin-bottom: 5%;
     color: white;
 }
 
 .ow-p{
     color: white;
     margin-bottom: 10%;
+}
+
+.ow-h3{
+    color: white;
+    margin-bottom: 2.5%;
 }
 
 .buttonUser{
