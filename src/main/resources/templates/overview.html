@@ -3,16 +3,21 @@
 <head>
     <title>Overview</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" href="css/style.css">
 </head>
-<body>
-<h1>Overview</h1>
+<body id="overview">
+    <div class="box-back">
 
-<p><span th:text="${ty}">value</span></p>
-<p><span th:text="${ge}">value</span></p>
-<p><span th:text="${ma}">value</span></p>
-<p><span th:text="${ha}">value</span></p>
+        <div class="ow_h1">
+            <h1>Overview</h1>
+        </div>
+            <p><span th:text="${ty}">value</span></p>
+            <p><span th:text="${ge}">value</span></p>
+            <p><span th:text="${ma}">value</span></p>
+            <p><span th:text="${ha}">value</span></p>
 
-<a href="index.html"><button>Home</button></a>
+            <a href="index.html"><button>Home</button></a>
+    </div>
 
 </body>
 </html>

@@ -52,7 +52,7 @@ header{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: #353a42;
+    background: #191919;
     text-align: center;
 }
 .box h1{
@@ -102,7 +102,7 @@ header{
 }
 
 #createUser{
-    background:  #87b0a9;
+    background: #F9CBFF;
 }
 
 
@@ -160,7 +160,7 @@ select::-ms-expand{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: #87b0a9;
+    background: #40407a;
 }
 
 #userDone{
@@ -170,3 +170,18 @@ select::-ms-expand{
     transform: translate(-50%,-50%);
 }
 
+#overview{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #87b0a9;
+    margin-bottom: 10%;
+
+}
+
+.ow_h1{
+    top: 40%;
+    left: 50%;
+    margin-bottom: 20%;
+}
